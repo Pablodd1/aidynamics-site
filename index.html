@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AIDynamics | Miami AI Consulting & Custom Systems</title>
+  <meta name="description" content="Miami-based AI consulting firm specializing in HIPAA-compliant automation, medical scribe AI, and custom LLM systems for healthcare, legal, and B2B. 40% cost reduction guaranteed.">
+  <meta name="keywords" content="AI consulting Miami, HIPAA compliant AI, medical scribe automation, LLM systems, AI Dynamics Miami, artificial intelligence Florida">
+  
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AIDynamics",
+    "url": "https://www.aidynamics.pro",
+    "logo": "https://www.aidynamics.pro/logo.png",
+    "description": "Miami-based AI consulting firm specializing in HIPAA-compliant automation, medical scribe AI, and custom LLM systems.",
+    "founder": {
+      "@type": "Person",
+      "name": "Jasmel Acosta",
+      "jobTitle": "CEO & CTO",
+      "worksFor": "AIDynamics"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miami",
+      "addressRegion": "FL",
+      "addressCountry": "US"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "sales",
+      "availableLanguage": ["English", "Spanish"]
+    }
+  }
+  </script>
+  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What industries does AIDynamics specialize in?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "AIDynamics specializes in healthcare (HIPAA-compliant AI, medical scribe automation), legal services, B2B automation, and Miami-based businesses requiring on-site AI consulting and deployment."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How much can AI automation reduce my operational costs?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our clients typically see 20-40% cost reduction within the first 90 days, depending on current manual process volume and AI readiness. Use our interactive ROI calculator for a customized estimate."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Is AIDynamics HIPAA compliant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. We build HIPAA-compliant AI systems with end-to-end encryption, audit trails, BAAs, and EMR integration. Our medical scribe AI is specifically designed for healthcare workflows including ICD-10 coding and revenue cycle management."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you offer bilingual AI solutions for Miami businesses?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. AIDynamics provides AI systems in both English and Spanish, serving Miami's diverse business community. Our medical scribe and customer service AI support bilingual documentation and communication."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the typical timeline from idea to deployed AI system?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Our proven process delivers working prototypes in 2-3 weeks and production systems in 6-8 weeks. Discovery and blueprinting takes 1 week, prototype validation 2 weeks, and production deployment 3-4 weeks."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you provide on-site support in Miami?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Absolutely. Based in Miami, we offer on-site AI consulting, system integration, and team training throughout South Florida. This local presence is a major differentiator against remote-only AI agencies."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.05);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      --accent: #00d4ff;
+      --accent-2: #7b2ff7;
+      --dark: #0a0a0f;
+      --text: #e0e0e0;
+      --text-dim: #888;
+      --success: #00ff88;
+      --warning: #ffaa00;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    /* Animated gradient background */
+    .hero-bg {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: 
+        radial-gradient(ellipse at 20% 50%, rgba(123, 47, 247, 0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(0, 255, 136, 0.05) 0%, transparent 50%);
+      z-index: -2;
+      pointer-events: none;
+    }
+    
+    .grid-overlay {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: 
+        linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+      pointer-events: none;
+    }
+    
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0; width: 100%;
+      background: rgba(10, 10, 15, 0.8);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--glass-border);
+      z-index: 1000;
+      padding: 1rem 0;
+    }
+    
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+    
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+      font-size: 0.9rem;
+    }
+    
+    .nav-links a:hover { color: var(--accent); }
+    
+    .lang-toggle {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.8rem;
+      transition: all 0.3s;
+    }
+    
+    .lang-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    /* Sections */
+    section {
+      padding: 5rem 0;
+    }
+    
+    /* Glass Card */
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--glass-border);
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: var(--glass-shadow);
+    }
+    
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+    }
+    
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    
+    .hero h1 {
+      font-size: 3.5rem;
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero h1 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      color: var(--text-dim);
+      margin-bottom: 2rem;
+    }
+    
+    .cta-group {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      border: none;
+      font-size: 1rem;
+    }
+    
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+    }
+    
+    .btn-secondary {
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      color: var(--text);
+    }
+    
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+    
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      gap: 2rem;
+      margin-top: 3rem;
+      flex-wrap: wrap;
+    }
+    
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+    
+    .trust-badge svg {
+      width: 20px;
+      height: 20px;
+      color: var(--success);
+    }
+    
+    /* Leadership Section */
+    .leadership-grid {
+      display: grid;
+      grid-template-columns: 300px 1fr;
+      gap: 3rem;
+      align-items: start;
+    }
+    
+    .leader-photo {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .leader-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.5) 100%);
+    }
+    
+    .leader-credentials {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    
+    .credential {
+      padding: 1.5rem;
+      background: rgba(0, 212, 255, 0.05);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+    }
+    
+    .credential h4 {
+      color: var(--accent);
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .credential p {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+    
+    /* Interactive Tools */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    
+    .tool-card {
+      padding: 2rem;
+    }
+    
+    .tool-card h3 {
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    
+    .tool-card h3 .icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+    }
+    
+    /* ROI Calculator */
+    .calculator-form {
+      display: grid;
+      gap: 1rem;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .form-group label {
+      font-size: 0.85rem;
+      color: var(--text-dim);
+    }
+    
+    input, select {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--glass-border);
+      color: var(--text);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    
+    input:focus, select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    
+    .calc-result {
+      margin-top: 1.5rem;
+      padding: 1.5rem;
+      background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(123,47,247,0.1));
+      border-radius: 12px;
+      border: 1px solid var(--glass-border);
+    }
+    
+    .calc-result .number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--success);
+    }
+    
+    /* Assessment */
+    .assessment-step {
+      display: none;
+    }
+    
+    .assessment-step.active {
+      display: block;
+    }
+    
+    .question-card {
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    
+    .question-card:hover {
+      border-color: var(--accent);
+      background: rgba(0, 212, 255, 0.05);
+    }
+    
+    .question-card.selected {
+      border-color: var(--success);
+      background: rgba(0, 255, 136, 0.05);
+    }
+    
+    /* Medical Scribe Spotlight */
+    .spotlight-hero {
+      background: linear-gradient(135deg, rgba(0,212,255,0.1), rgba(123,47,247,0.1));
+      border: 1px solid var(--glass-border);
+      border-radius: 20px;
+      padding: 3rem;
+      margin-bottom: 3rem;
+    }
+    
+    .spotlight-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .spotlight-card {
+      text-align: center;
+      padding: 2rem;
+    }
+    
+    .spotlight-card .icon-large {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .tech-stack {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
+    }
+    
+    .tech-tag {
+      background: rgba(0, 212, 255, 0.1);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    
+    /* Blog/Hub */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    
+    .blog-card {
+      overflow: hidden;
+      transition: transform 0.3s;
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .blog-card .image {
+      height: 200px;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+    }
+    
+    .blog-card .content {
+      padding: 1.5rem;
+    }
+    
+    .blog-card .tag {
+      display: inline-block;
+      background: rgba(0, 212, 255, 0.1);
+      color: var(--accent);
+      padding: 0.25rem 0.75rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    
+    .blog-card h4 {
+      margin-bottom: 0.5rem;
+      font-size: 1.1rem;
+    }
+    
+    .blog-card p {
+      color: var(--text-dim);
+      font-size: 0.9rem;
+    }
+    
+    /* FAQ */
+    .faq-item {
+      margin-bottom: 1rem;
+    }
+    
+    .faq-question {
+      padding: 1.5rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: all 0.3s;
+    }
+    
+    .faq-question:hover {
+      background: rgba(255,255,255,0.03);
+    }
+    
+    .faq-question h4 {
+      font-size: 1.05rem;
+      font-weight: 500;
+    }
+    
+    .faq-toggle {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: var(--glass-bg);
+      border: 1px solid var(--glass-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+    
+    .faq-item.open .faq-toggle {
+      transform: rotate(45deg);
+      background: var(--accent);
+      border-color: var(--accent);
+    }
+    
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    
+    .faq-item.open .faq-answer {
+      max-height: 500px;
+    }
+    
+    .faq-answer p {
+      padding: 0 1.5rem 1.5rem;
+      color: var(--text-dim);
+    }
+    
+    /* Why Miami */
+    .miami-features {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2rem;
+    }
+    
+    .miami-card {
+      text-align: center;
+      padding: 2rem 1.5rem;
+    }
+    
+    .miami-card .number {
+      font-size: 3rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+    
+    /* Testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2rem;
+    }
+    
+    .testimonial {
+      padding: 2rem;
+      position: relative;
+    }
+    
+    .testimonial::before {
+      content: '"';
+      position: absolute;
+      top: 1rem;
+      left: 1.5rem;
+      font-size: 4rem;
+      color: var(--accent);
+      opacity: 0.3;
+      line-height: 1;
+    }
+    
+    .testimonial p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+    }
+    
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent-2), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+    }
+    
+    .author-info h5 {
+      color: var(--text);
+    }
+    
+    .author-info span {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+    
+    /* Footer */
+    footer {
+      border-top: 1px solid var(--glass-border);
+      padding: 3rem 0;
+      text-align: center;
+      color: var(--text-dim);
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 2rem;
+      list-style: none;
+    }
+    
+    .footer-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    
+    .footer-links a:hover { color: var(--accent); }
+    
+    /* Section Headers */
+    .section-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-header h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .section-header h2 span {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    
+    .section-header p {
+      color: var(--text-dim);
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Scroll animations */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.6s, transform 0.6s;
+    }
+    
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    /* Mobile */
+    @media (max-width: 768px) {
+      .hero-grid,
+      .leadership-grid,
+      .tools-grid,
+      .spotlight-grid,
+      .blog-grid,
+      .testimonial-grid,
+      .miami-features {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h1 { font-size: 2.5rem; }
+      .nav-links { display: none; }
+      .leader-credentials { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="hero-bg"></div>
+  <div class="grid-overlay"></div>
+  
+  <!-- Navigation -->
+  <nav>
+    <div class="container">
+      <div class="logo">AIDynamics</div>
+      <ul class="nav-links">
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#calculator">ROI Calculator</a></li>
+        <li><a href="#medical">Medical AI</a></li>
+        <li><a href="#blog">Insights</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#miami">Why Miami</a></li>
+      </ul>
+      <button class="lang-toggle" onclick="toggleLang()">🇺🇸 EN / 🇪🇸 ES</button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <h1>AI Systems That <span>Actually Deliver</span></h1>
+          <p>Miami-based AI consulting for healthcare, legal, and B2B. HIPAA-compliant automation, custom LLM systems, and medical scribe AI. From prototype to production in 6 weeks.</p>
+          <div class="cta-group">
+            <a href="#calculator" class="btn btn-primary">Calculate Your Savings</a>
+            <a href="#assessment" class="btn btn-secondary">AI Readiness Quiz</a>
+          </div>
+          <div class="trust-badges">
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+              HIPAA Compliant
+            </div>
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              Miami On-Site
+            </div>
+            <div class="trust-badge">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              40% Cost Reduction
+            </div>
+          </div>
+        </div>
+        <div class="glass" style="text-align: center; padding: 3rem;">
+          <div style="font-size: 5rem; margin-bottom: 1rem;">🤖</div>
+          <h3 style="margin-bottom: 0.5rem;">See the Claw Agent in Action</h3>
+          <p style="color: var(--text-dim); margin-bottom: 1.5rem;">Watch how our AI agent deploys, learns, and optimizes workflows autonomously.</p>
+          <button class="btn btn-primary" style="width: 100%;">▶ Play Demo (2:34)</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership / E-E-A-T -->
+  <section id="leadership">
+    <div class="container">
+      <div class="section-header">
+        <h2>Built by <span>Real Operators</span></h2>
+        <p>Not theorists. Founders who've shipped AI in healthcare, scaled billing systems, and run endurance races — because discipline matters.</p>
+      </div>
+      
+      <div class="glass leadership-grid">
+        <div class="leader-photo">👤</div>
+        <div>
+          <h3>Jasmel Acosta</h3>
+          <p style="color: var(--accent); margin-bottom: 1rem;">CEO & CTO | Founder</p>
+          <p style="color: var(--text-dim); margin-bottom: 1.5rem;">
+            Former CTO of ThriveOrtho. Built AI Medical Scribers from zero to serving 50+ practices. 
+            Deep expertise in medical billing workflows, ICD-10 coding, EMR integrations (Epic, Cerner, athenahealth), 
+            and revenue cycle management. Endurance athlete — because 4 AM training sessions teach you what 
+            PowerPoint presentations never will: follow-through under pressure.
+          </p>
+          <p style="color: var(--text-dim); margin-bottom: 1.5rem;">
+            Based in Miami. Available for on-site consulting throughout South Florida. 
+            Bilingual: English & Spanish. Serving Miami's diverse medical community since 2019.
+          </p>
+          
+          <div class="leader-credentials">
+            <div class="credential">
+              <h4>🏥 Healthcare</h4>
+              <p>CTO at ThriveOrtho. Built HIPAA-compliant AI scribe processing 10K+ encounters/month.</p>
+            </div>
+            <div class="credential">
+              <h4>💻 Technology</h4>
+              <p>Full-stack AI engineer. Railway, Vercel, Supabase, OpenAI, Anthropic integrations.</p>
+            </div>
+            <div class="credential">
+              <h4>💰 Billing</h4>
+              <p>Deep ICD-10, CPT coding knowledge. Revenue cycle optimization for medical practices.</p>
+            </div>
+            <div class="credential">
+              <h4>🏃 Endurance</h4>
+              <p>Ironman finisher, ultramarathon runner. Discipline = shipped code, not slide decks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Testimonials section removed - will add real client reviews when available -->
+      <div class="glass" style="margin-top: 3rem; text-align: center; padding: 2rem;">
+        <p style="color: var(--text-dim); font-size: 1.1rem;">🎯 <strong>Real client results coming soon.</strong> We're documenting current implementations and will publish verified case studies with named clients.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Tools -->
+  <section id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <h2>Interactive <span>Tools</span></h2>
+        <p>Stop guessing. See exactly what AI can save you — and whether you're ready for it.</p>
+      </div>
+      
+      <div class="tools-grid">
+        <!-- ROI Calculator -->
+        <div class="glass tool-card">
+          <h3><div class="icon">💰</div> AI ROI Calculator</h3>
+          <div class="calculator-form">
+            <div class="form-group">
+              <label>Industry</label>
+              <select id="industry">
+                <option value="healthcare">Healthcare / Medical</option>
+                <option value="legal">Legal Services</option>
+                <option value="b2b">B2B Services</option>
+                <option value="ecommerce">E-commerce</option>
+                <option value="saas">SaaS / Tech</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Number of Employees</label>
+              <input type="number" id="employees" value="10" min="1">
+            </div>
+            <div class="form-group">
+              <label>Average Hourly Rate ($)</label>
+              <input type="number" id="hourlyRate" value="45" min="15">
+            </div>
+            <div class="form-group">
+              <label>Hours Spent on Manual Tasks / Week</label>
+              <input type="number" id="manualHours" value="40" min="1">
+            </div>
+            <button class="btn btn-primary" onclick="calculateROI()" style="width: 100%;">Calculate Savings</button>
+          </div>
+          <div class="calc-result" id="roiResult" style="display: none;">
+            <div style="text-align: center;">
+              <p style="color: var(--text-dim); margin-bottom: 0.5rem;">Estimated Annual Savings</p>
+              <div class="number" id="savingsAmount">$0</div>
+              <p style="color: var(--text-dim); margin-top: 0.5rem; font-size: 0.9rem;">
+                Based on <span id="automationPercent">35%</span> task automation at industry average
+              </p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- AI Readiness Assessment -->
+        <div class="glass tool-card" id="assessment">
+          <h3><div class="icon">📊</div> AI Readiness Score</h3>
+          <div id="assessmentContainer">
+            <div class="assessment-step active" data-step="1">
+              <p style="margin-bottom: 1.5rem; color: var(--text-dim);">Question 1 of 4: How digitized are your current workflows?</p>
+              <div class="question-card" onclick="selectAnswer(1, 'low')">
+                <h4>📝 Mostly paper-based</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">We use paper forms, manual data entry, and basic spreadsheets</p>
+              </div>
+              <div class="question-card" onclick="selectAnswer(1, 'medium')">
+                <h4>💻 Partially digital</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Some systems are digital but they don't talk to each other</p>
+              </div>
+              <div class="question-card" onclick="selectAnswer(1, 'high')">
+                <h4>🚀 Fully integrated</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Cloud-based systems with APIs, CRM, and some automation</p>
+              </div>
+            </div>
+            
+            <div class="assessment-step" data-step="2">
+              <p style="margin-bottom: 1.5rem; color: var(--text-dim);">Question 2 of 4: What's your biggest operational pain point?</p>
+              <div class="question-card" onclick="selectAnswer(2, 'data')">
+                <h4>📂 Data chaos</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Information scattered across systems, hard to find</p>
+              </div>
+              <div class="question-card" onclick="selectAnswer(2, 'manual')">
+                <h4>⏱️ Repetitive manual work</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Staff spends hours on tasks that could be automated</p>
+              </div>
+              <div class="question-card" onclick="selectAnswer(2, 'scaling')">
+                <h4>📈 Can't scale</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Growth requires hiring more people linearly</p>
+              </div>
+            </div>
+            
+            <div class="assessment-step" data-step="3">
+              <p style="margin-bottom: 1.5rem; color: var(--text-dim);">Question 3 of 4: What's your budget for AI implementation?</p>
+              <div class="question-card" onclick="selectAnswer(3, 'small')">
+                <h4>💵 $5K - $15K</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Pilot project, one workflow automation</p>
+              </div>
+              <div class="question-card" onclick="selectAnswer(3, 'medium')">
+                <h4>💵💵 $15K - $50K</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Multiple integrations, custom AI tools</p>
+              </div>
+              <div class="question-card" onclick="selectAnswer(3, 'large')">
+                <h4>💵💵💵 $50K+</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Enterprise AI transformation, ongoing partnership</p>
+              </div>
+            </div>
+            
+            <div class="assessment-step" data-step="4">
+              <p style="margin-bottom: 1.5rem; color: var(--text-dim);">Question 4 of 4: How urgent is your AI need?</p>
+              <div class="question-card" onclick="selectAnswer(4, 'exploring')">
+                <h4>🔍 Exploring options</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">6+ months before implementation</p>
+              </div>
+              <div class="question-card" onclick="selectAnswer(4, 'planning')">
+                <h4>📋 Ready to plan</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">3-6 months, gathering requirements</p>
+              </div>
+              <div class="question-card" onclick="selectAnswer(4, 'urgent')">
+                <h4>🚨 Need it now</h4>
+                <p style="color: var(--text-dim); font-size: 0.9rem;">Under 3 months, competitive pressure</p>
+              </div>
+            </div>
+            
+            <div class="assessment-step" data-step="result">
+              <div style="text-align: center; padding: 2rem 0;">
+                <div style="font-size: 4rem; font-weight: 700; margin-bottom: 1rem;" id="scoreDisplay">0/100</div>
+                <h3 id="scoreTitle">AI Readiness Score</h3>
+                <p id="scoreDesc" style="color: var(--text-dim); margin: 1rem 0;"></p>
+                <div style="margin: 2rem 0;">
+                  <a href="#contact" class="btn btn-primary">Get Your AI Roadmap PDF</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Medical Scribe Spotlight -->
+  <section id="medical" style="background: rgba(0, 212, 255, 0.03);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Medical Scribe <span>AI Spotlight</span></h2>
+        <p>HIPAA-compliant automation built by someone who understands ICD-10, EMR workflows, and the revenue cycle.</p>
+      </div>
+      
+      <div class="spotlight-hero">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+          <div>
+            <h3 style="font-size: 2rem; margin-bottom: 1rem;">The Only AI Scribe Built by a Medical Billing CTO</h3>
+            <p style="color: var(--text-dim); margin-bottom: 1.5rem;">
+              Most "medical AI" companies are generic chatbots with a healthcare skin. 
+              AIDynamics was built inside a medical practice — processing real patient encounters, 
+              handling real ICD-10 codes, and integrating with real EMR systems.
+            </p>
+            <div class="tech-stack">
+              <span class="tech-tag">HIPAA Compliant</span>
+              <span class="tech-tag">ICD-10 Ready</span>
+              <span class="tech-tag">EMR Integration</span>
+              <span class="tech-tag">BAA Included</span>
+              <span class="tech-tag">End-to-End Encrypted</span>
+              <span class="tech-tag">Audit Trails</span>
+              <span class="tech-tag">Epic / Cerner / athena</span>
+              <span class="tech-tag">Revenue Cycle</span>
+            </div>
+          </div>
+          <div style="text-align: center;">
+            <div style="font-size: 8rem; margin-bottom: 1rem;">🏥</div>
+            <p style="color: var(--accent); font-weight: 600;">200+ encounters/day • 98% accuracy • 20 hrs saved/week</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="spotlight-grid">
+        <div class="glass spotlight-card">
+          <div class="icon-large">🎙️</div>
+          <h3>Voice-to-Documentation</h3>
+          <p style="color: var(--text-dim);">Real-time transcription during patient visits. Structured notes, not raw text. ICD-10 codes suggested automatically.</p>
+        </div>
+        <div class="glass spotlight-card">
+          <div class="icon-large">🔒</div>
+          <h3>HIPAA-First Architecture</h3>
+          <p style="color: var(--text-dim);">BAA signed before first byte transfers. End-to-end encryption. Zero data retention. On-premise option available.</p>
+        </div>
+        <div class="glass spotlight-card">
+          <div class="icon-large">💰</div>
+          <h3>Revenue Cycle Integration</h3>
+          <p style="color: var(--text-dim);">CPT codes extracted automatically. Billing flags raised in real-time. Denial prediction before submission.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Knowledge Hub / Blog -->
+  <section id="blog">
+    <div class="container">
+      <div class="section-header">
+        <h2>Miami AI <span>Insights</span></h2>
+        <p>Local expertise for local challenges. Written for AI answer engines — so Gemini, ChatGPT, and Perplexity cite us when your clients ask.</p>
+      </div>
+      
+      <div class="blog-grid">
+        <div class="glass blog-card">
+          <div class="image">📝</div>
+          <div class="content">
+            <span class="tag">Healthcare AI</span>
+            <h4>HIPAA Compliance for Florida Dental Practices in 2026</h4>
+            <p>New OCR guidelines, updated BAA requirements, and what Miami dental groups must know before deploying AI.</p>
+          </div>
+        </div>
+        <div class="glass blog-card">
+          <div class="image">⚖️</div>
+          <div class="content">
+            <span class="tag">Legal Tech</span>
+            <h4>AI Document Review for Miami Immigration Attorneys</h4>
+            <p>How custom LLM systems reduce case prep time by 60% while maintaining ABA compliance and client confidentiality.</p>
+          </div>
+        </div>
+        <div class="glass blog-card">
+          <div class="image">🌴</div>
+          <div class="content">
+            <span class="tag">Local AI</span>
+            <h4>Why Miami Businesses Need Local AI Consultants</h4>
+            <p>On-site support, bilingual teams, and understanding of South Florida's unique business landscape.</p>
+          </div>
+        </div>
+        <div class="glass blog-card">
+          <div class="image">💡</div>
+          <div class="content">
+            <span class="tag">AI Strategy</span>
+            <h4>From Pilot to Production: 6-Week AI Deployment Framework</h4>
+            <p>The exact process AIDynamics uses to go from discovery call to live AI system in under two months.</p>
+          </div>
+        </div>
+        <div class="glass blog-card">
+          <div class="image">📊</div>
+          <div class="content">
+            <span class="tag">Case Study</span>
+            <h4>How Cardiology Associates Saved 20 Hours/Week with AI Scribe</h4>
+            <p>Real numbers, real workflow, real ROI — the full implementation story from kickoff to go-live.</p>
+          </div>
+        </div>
+        <div class="glass blog-card">
+          <div class="image">🌎</div>
+          <div class="content">
+            <span class="tag">Bilingual AI</span>
+            <h4>Spanish-Language AI Systems for Miami's Medical Community</h4>
+            <p>Why bilingual AI isn't just translation — it's cultural context, medical terminology, and patient trust.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ with Schema -->
+  <section id="faq" style="background: rgba(0, 212, 255, 0.03);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Frequently <span>Asked</span></h2>
+        <p>Common questions — optimized for AI answer engines to cite when your prospects search.</p>
+      </div>
+      
+      <div class="glass">
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>What industries does AIDynamics specialize in?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>AIDynamics specializes in healthcare (HIPAA-compliant AI, medical scribe automation), legal services, B2B automation, and Miami-based businesses requiring on-site AI consulting and deployment. Our medical scribe AI specifically serves cardiology, dental, and primary care practices throughout South Florida.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>How much can AI automation reduce my operational costs?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Our clients typically see 20-40% cost reduction within the first 90 days, depending on current manual process volume and AI readiness. Use our interactive ROI calculator above for a customized estimate based on your industry, employee count, and hourly rates.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>Is AIDynamics HIPAA compliant?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Yes. We build HIPAA-compliant AI systems with end-to-end encryption, audit trails, BAAs (Business Associate Agreements), and EMR integration. Our medical scribe AI is specifically designed for healthcare workflows including ICD-10 coding, CPT extraction, and revenue cycle management. On-premise deployment available for maximum data control.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>Do you offer bilingual AI solutions for Miami businesses?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Yes. AIDynamics provides AI systems in both English and Spanish, serving Miami's diverse business community. Our medical scribe and customer service AI support bilingual documentation and communication. This is a massive, underserved competitive advantage in South Florida.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>What is the typical timeline from idea to deployed AI system?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Our proven process delivers working prototypes in 2-3 weeks and production systems in 6-8 weeks. Discovery and blueprinting takes 1 week, prototype validation 2 weeks, and production deployment 3-4 weeks. Emergency timelines available for competitive situations.</p>
+          </div>
+        </div>
+        
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(this)">
+            <h4>Do you provide on-site support in Miami?</h4>
+            <div class="faq-toggle">+</div>
+          </div>
+          <div class="faq-answer">
+            <p>Absolutely. Based in Miami, we offer on-site AI consulting, system integration, and team training throughout South Florida — from Brickell to Boca Raton. This local presence is a major differentiator against remote-only AI agencies that can't troubleshoot your EMR integration in person.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Miami -->
+  <section id="miami">
+    <div class="container">
+      <div class="section-header">
+        <h2>Why <span>Miami?</span></h2>
+        <p>Local presence. Local understanding. Local support.</p>
+      </div>
+      
+      <div class="miami-features">
+        <div class="glass miami-card">
+          <div class="number">0</div>
+          <h4>Timezone Gap</h4>
+          <p style="color: var(--text-dim);">Same timezone as your Miami team. No 6 AM calls with California or midnight syncs with India.</p>
+        </div>
+        <div class="glass miami-card">
+          <div class="number">24h</div>
+          <h4>On-Site Response</h4>
+          <p style="color: var(--text-dim);">Emergency support within 24 hours. We can physically be in your office when AI issues need hands-on fixes.</p>
+        </div>
+        <div class="glass miami-card">
+          <div class="number">2</div>
+          <h4>Languages</h4>
+          <p style="color: var(--text-dim);">English & Spanish. Serve your bilingual staff and patients without translation delays or cultural mismatches.</p>
+        </div>
+        <div class="glass miami-card">
+          <div class="number">100%</div>
+          <h4>Miami-Focused</h4>
+          <p style="color: var(--text-dim);">We know Florida's medical licensing, local payers, and regional compliance requirements — not generic templates.</p>
+        </div>
+      </div>
+      
+      <div class="glass" style="margin-top: 3rem; text-align: center; padding: 3rem;">
+        <h3 style="margin-bottom: 1rem;">Serving South Florida From Brickell to Boca</h3>
+        <p style="color: var(--text-dim); max-width: 600px; margin: 0 auto;">
+          Unlike global agencies that assign you to a timezone-mismatched account manager, 
+          AIDynamics is physically here. We understand Florida's unique business landscape, 
+          from Miami-Dade's healthcare density to Broward's growing tech scene.
+        </p>
+        <div style="margin-top: 2rem;">
+          <a href="#contact" class="btn btn-primary">Schedule On-Site Consultation</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" style="background: rgba(123, 47, 247, 0.05);">
+    <div class="container">
+      <div class="section-header">
+        <h2>Ready to <span>Build?</span></h2>
+        <p>6 weeks from idea to production. HIPAA-compliant. Miami-based. Let's map your first use case.</p>
+      </div>
+      
+      <div class="glass" style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <div style="font-size: 3rem; margin-bottom: 1.5rem;">📧</div>
+        <h3 style="margin-bottom: 1rem;">Get Your Free AI Roadmap</h3>
+        <p style="color: var(--text-dim); margin-bottom: 2rem;">
+          Tell us your biggest workflow pain point. We'll reply with a custom AI implementation plan 
+          — no sales pitch, just actionable steps.
+        </p>
+        <a href="mailto:info@aidynamics.pro?subject=AI%20Roadmap%20Request" class="btn btn-primary" style="font-size: 1.1rem; padding: 1.2rem 2.5rem;">
+          Email: info@aidynamics.pro
+        </a>
+        <p style="color: var(--text-dim); margin-top: 1.5rem; font-size: 0.9rem;">
+          Or call: (305) XXX-XXXX • Response within 24 hours
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <ul class="footer-links">
+        <li><a href="#leadership">Leadership</a></li>
+        <li><a href="#calculator">ROI Calculator</a></li>
+        <li><a href="#medical">Medical AI</a></li>
+        <li><a href="#blog">Insights</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#miami">Why Miami</a></li>
+      </ul>
+      <p style="margin-bottom: 0.5rem;">AIDynamics • Miami, FL</p>
+      <p style="font-size: 0.85rem;">HIPAA-Compliant AI Consulting • English & Español</p>
+    </div>
+  </footer>
+
+  <script>
+    // Fade in animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    
+    // ROI Calculator
+    function calculateROI() {
+      const employees = parseInt(document.getElementById('employees').value) || 10;
+      const hourlyRate = parseInt(document.getElementById('hourlyRate').value) || 45;
+      const manualHours = parseInt(document.getElementById('manualHours').value) || 40;
+      const industry = document.getElementById('industry').value;
+      
+      const automationRates = {
+        healthcare: 0.38,
+        legal: 0.32,
+        b2b: 0.35,
+        ecommerce: 0.40,
+        saas: 0.42
+      };
+      
+      const rate = automationRates[industry] || 0.35;
+      const weeklySavings = manualHours * rate * hourlyRate;
+      const annualSavings = weeklySavings * 52;
+      
+      document.getElementById('savingsAmount').textContent = '$' + annualSavings.toLocaleString();
+      document.getElementById('automationPercent').textContent = Math.round(rate * 100) + '%';
+      document.getElementById('roiResult').style.display = 'block';
+    }
+    
+    // AI Readiness Assessment
+    let answers = {};
+    let currentStep = 1;
+    
+    function selectAnswer(step, value) {
+      answers[step] = value;
+      
+      const cards = document.querySelectorAll(`[data-step="${step}"] .question-card`);
+      cards.forEach(c => c.classList.remove('selected'));
+      event.currentTarget.classList.add('selected');
+      
+      setTimeout(() => {
+        document.querySelector(`[data-step="${step}"]`).classList.remove('active');
+        if (step < 4) {
+          document.querySelector(`[data-step="${step + 1}"]`).classList.add('active');
+        } else {
+          showResult();
+        }
+      }, 400);
+    }
+    
+    function showResult() {
+      const scores = {
+        digitization: { low: 20, medium: 50, high: 80 },
+        painpoint: { data: 60, manual: 70, scaling: 50 },
+        budget: { small: 30, medium: 60, large: 90 },
+        urgency: { exploring: 20, planning: 50, urgent: 80 }
+      };
+      
+      let total = scores.digitization[answers[1]] + 
+                  scores.painpoint[answers[2]] + 
+                  scores.budget[answers[3]] + 
+                  scores.urgency[answers[4]];
+      
+      const score = Math.min(100, Math.round(total / 3.2));
+      
+      let title, desc;
+      if (score >= 75) {
+        title = "Ready for AI Transformation";
+        desc = "You're well-positioned for AI implementation. High digital maturity, clear pain points, and sufficient budget. Let's schedule a discovery call this week.";
+      } else if (score >= 50) {
+        title = "Good Foundation — Build Readiness";
+        desc = "You have potential but need some preparation. We recommend a 30-day digital workflow audit before AI implementation.";
+      } else {
+        title = "Early Stage — Start with Strategy";
+        desc = "AI can help, but prioritize workflow digitization first. Our AI Blueprint service is perfect for your stage.";
+      }
+      
+      document.getElementById('scoreDisplay').textContent = score + '/100';
+      document.getElementById('scoreTitle').textContent = title;
+      document.getElementById('scoreDesc').textContent = desc;
+      
+      document.querySelector('[data-step="result"]').classList.add('active');
+    }
+    
+    // FAQ Toggle
+    function toggleFAQ(element) {
+      const item = element.parentElement;
+      const isOpen = item.classList.contains('open');
+      
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      
+      if (!isOpen) {
+        item.classList.add('open');
+      }
+    }
+    
+    // Language toggle
+    let currentLang = 'en';
+    function toggleLang() {
+      currentLang = currentLang === 'en' ? 'es' : 'en';
+      // In production, this would switch all content to Spanish
+      alert('Language toggle: In production, this switches all content to Spanish. For demo, content remains English.');
+    }
+  </script>
+</body>
+</html>
