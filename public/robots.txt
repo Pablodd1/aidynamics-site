@@ -1,0 +1,13 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.aidynamics.pro/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 10
+
+# Disallow admin/private paths
+Disallow: /api/
+Disallow: /_next/
