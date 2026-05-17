@@ -4,5 +4,12 @@ out/
 .env
 .env.local
 .env*.local
+.env.production
+.maestro/
+maestro-state.json
+maestro-state.json.lock
+maestro.log
+maestro.toml
 *.tsbuildinfo
 next-env.d.ts
+.vercel

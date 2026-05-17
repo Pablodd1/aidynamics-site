@@ -6,6 +6,7 @@ const NAV_LINKS = [
   { href: '#services', label: 'Services' },
   { href: '#calculator', label: 'ROI Calculator' },
   { href: '#testimonials', label: 'Results' },
+  { href: '/blog', label: 'Blog' },
   { href: '#faq', label: 'FAQ' },
   { href: '#contact', label: 'Contact' },
 ];

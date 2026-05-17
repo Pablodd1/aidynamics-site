@@ -48,7 +48,8 @@ export const metadata = {
   },
   manifest: '/manifest.json',
   other: {
-    'google-site-verification': '',
+    'google-site-verification': 'REPLACE_WITH_VERIFICATION_CODE_FROM_GOOGLE',
+    'google-search-console': 'Submit sitemap at https://search.google.com/search-console → aidynamic.pro → Sitemaps → https://www.aidynamics.pro/sitemap.xml',
   },
 };
 
